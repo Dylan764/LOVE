@@ -491,16 +491,15 @@ button:hover {
 
 /* TEXTO */
 .texto-historia {
-    width: 88%;
-    max-width: 350px;
-
-    margin-top: 90px; /* BAJA EL TEXTO */
-
-    font-size: 14px;
+    max-width: 500px;
     line-height: 1.7;
+    opacity: .75;
+    font-size: 16px;
 
-    opacity: .8;
+    position: relative;
+    top: 20px;
 }
+
     #historia button {
         margin-top: 18px;
 
