@@ -434,14 +434,12 @@ button:hover {
        FOTO PROTAGONISTA
     ========================= */
 
-/* =========================
-   FOTO ARRIBA IZQUIERDA
-==.foto1 {
+.foto1 {
     width: 145px;
     height: 195px;
 
     left: 10%;
-    top: -20px; /* más arriba */
+    top: -10px; /* más arriba */
 
     transform: rotate(-8deg);
     z-index: 4;
@@ -454,7 +452,7 @@ button:hover {
 
     left: auto !important;
     right: 24px !important;
-    top: -10px !important; /* más arriba */
+    top: 0px !important; /* más arriba */
 
     transform: rotate(7deg) !important;
     z-index: 999 !important;
@@ -465,7 +463,7 @@ button:hover {
     height: 195px;
 
     left: 10%;
-    top: 175px; /* más arriba */
+    top: 185px; /* más arriba */
 
     transform: rotate(6deg);
     z-index: 2;
@@ -478,7 +476,7 @@ button:hover {
     height: 195px;
 
     right: 7%;
-    top: 165px; /* más arriba */
+    top: 175px; /* más arriba */
 
     transform: rotate(-7deg);
     z-index: 3;
