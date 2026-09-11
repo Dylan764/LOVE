@@ -150,6 +150,8 @@ button:hover {
     font-size: 45px;
     font-weight: normal;
     margin-top: 10px;
+
+    transform: translateY(-19px);
 }
 
 .galeria {
