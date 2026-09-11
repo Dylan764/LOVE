@@ -206,10 +206,12 @@ button:hover {
 }
 
 @keyframes aparecer {
+
     from {
         opacity: 0;
-        transform: translateY(80px) scale(.8) rotate(0);
+        transform: translateY(50px) scale(.85);
     }
+
     to {
         opacity: 1;
     }
@@ -224,13 +226,34 @@ button:hover {
 }
 /* =========================
    RESPONSIVE CELULAR
+===/* =========================
+   RESPONSIVE CELULAR
 ========================= */
 
 @media (max-width: 600px) {
 
+    /* =========================
+       PANTALLA HISTORIA
+    ========================= */
+
     #historia {
-        padding: 15px;
-        overflow: hidden;
+        padding: 18px 10px 25px;
+
+        /* IMPORTANTE */
+        justify-content: flex-start;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+
+    /* =========================
+       TITULO
+    ========================= */
+
+    .titulo {
+        margin-top: 5px;
+        flex-shrink: 0;
     }
 
     .titulo p {
@@ -239,25 +262,36 @@ button:hover {
     }
 
     .titulo h2 {
-        font-size: 36px;
-        margin-top: 6px;
+        font-size: 38px;
+        margin-top: 5px;
     }
 
 
-    /* GALERÍA */
+    /* =========================
+       GALERÍA
+    ========================= */
 
     .galeria {
         width: 100%;
-        height: 420px;
-        margin: 5px 0;
+        height: 390px;
+
+        position: relative;
+
+        margin: 5px 0 0;
+
+        flex-shrink: 0;
     }
 
 
-    /* FOTOS */
+    /* =========================
+       FOTOS
+    ========================= */
 
     .foto {
         padding: 6px;
-        box-shadow: 0 15px 35px rgba(0,0,0,.45);
+
+        box-shadow:
+            0 12px 30px rgba(0,0,0,.55);
     }
 
     .foto img {
@@ -267,14 +301,17 @@ button:hover {
     }
 
 
-    /* FOTO 1 */
+    /* =========================
+       FOTO 1
+       ARRIBA IZQUIERDA
+    ========================= */
 
     .foto1 {
-        width: 145px;
-        height: 195px;
+        width: 125px;
+        height: 170px;
 
-        left: 4%;
-        top: 25px;
+        left: 6%;
+        top: 15px;
 
         transform: rotate(-8deg);
 
@@ -282,15 +319,18 @@ button:hover {
     }
 
 
-    /* FOTO 2 */
+    /* =========================
+       FOTO 2
+       ARRIBA DERECHA
+    ========================= */
 
     .foto2 {
-        width: 145px;
-        height: 195px;
+        width: 125px;
+        height: 170px;
 
-        right: 4%;
         left: auto;
-        top: 15px;
+        right: 6%;
+        top: 5px;
 
         transform: rotate(7deg);
 
@@ -298,15 +338,18 @@ button:hover {
     }
 
 
-    /* FOTO 3 */
+    /* =========================
+       FOTO 3
+       ABAJO IZQUIERDA
+    ========================= */
 
     .foto3 {
-        width: 145px;
-        height: 195px;
+        width: 125px;
+        height: 170px;
 
         left: 8%;
         right: auto;
-        top: 205px;
+        top: 195px;
 
         transform: rotate(6deg);
 
@@ -314,14 +357,18 @@ button:hover {
     }
 
 
-    /* FOTO 4 */
+    /* =========================
+       FOTO 4
+       ABAJO DERECHA
+    ========================= */
 
     .foto4 {
-        width: 145px;
-        height: 195px;
+        width: 125px;
+        height: 170px;
 
+        left: auto;
         right: 7%;
-        top: 215px;
+        top: 205px;
 
         transform: rotate(-7deg);
 
@@ -329,16 +376,43 @@ button:hover {
     }
 
 
-    /* TEXTO */
+    /* =========================
+       TEXTO
+    ========================= */
 
     .texto-historia {
-        width: 90%;
-        max-width: 340px;
 
-        font-size: 14px;
-        line-height: 1.6;
+        width: 90%;
+        max-width: 350px;
 
         margin: 0 auto;
+
+        font-size: 15px;
+        line-height: 1.65;
+
+        opacity: .85;
+
+        position: relative;
+        z-index: 20;
+
+        flex-shrink: 0;
+    }
+
+
+    /* =========================
+       BOTÓN
+    ========================= */
+
+    #historia button {
+
+        margin-top: 15px;
+        margin-bottom: 20px;
+
+        padding: 12px 27px;
+
+        font-size: 14px;
+
+        flex-shrink: 0;
     }
 }
 
