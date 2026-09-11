@@ -206,12 +206,10 @@ button:hover {
 }
 
 @keyframes aparecer {
-
     from {
         opacity: 0;
-        transform: translateY(50px) scale(.85);
+        transform: translateY(80px) scale(.8) rotate(0);
     }
-
     to {
         opacity: 1;
     }
@@ -223,197 +221,6 @@ button:hover {
     line-height: 1.7;
     opacity: .75;
     font-size: 16px;
-}
-/* =========================
-   RESPONSIVE CELULAR
-===/* =========================
-   RESPONSIVE CELULAR
-========================= */
-
-@media (max-width: 600px) {
-
-    /* =========================
-       PANTALLA HISTORIA
-    ========================= */
-
-    #historia {
-        padding: 18px 10px 25px;
-
-        /* IMPORTANTE */
-        justify-content: flex-start;
-
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-
-
-    /* =========================
-       TITULO
-    ========================= */
-
-    .titulo {
-        margin-top: 5px;
-        flex-shrink: 0;
-    }
-
-    .titulo p {
-        font-size: 9px;
-        letter-spacing: 3px;
-    }
-
-    .titulo h2 {
-        font-size: 38px;
-        margin-top: 5px;
-    }
-
-
-    /* =========================
-       GALERÍA
-    ========================= */
-
-    .galeria {
-        width: 100%;
-        height: 390px;
-
-        position: relative;
-
-        margin: 5px 0 0;
-
-        flex-shrink: 0;
-    }
-
-
-    /* =========================
-       FOTOS
-    ========================= */
-
-    .foto {
-        padding: 6px;
-
-        box-shadow:
-            0 12px 30px rgba(0,0,0,.55);
-    }
-
-    .foto img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-
-    /* =========================
-       FOTO 1
-       ARRIBA IZQUIERDA
-    ========================= */
-
-    .foto1 {
-        width: 125px;
-        height: 170px;
-
-        left: 6%;
-        top: 15px;
-
-        transform: rotate(-8deg);
-
-        z-index: 2;
-    }
-
-
-    /* =========================
-       FOTO 2
-       ARRIBA DERECHA
-    ========================= */
-
-    .foto2 {
-        width: 125px;
-        height: 170px;
-
-        left: auto;
-        right: 6%;
-        top: 5px;
-
-        transform: rotate(7deg);
-
-        z-index: 3;
-    }
-
-
-    /* =========================
-       FOTO 3
-       ABAJO IZQUIERDA
-    ========================= */
-
-    .foto3 {
-        width: 125px;
-        height: 170px;
-
-        left: 8%;
-        right: auto;
-        top: 195px;
-
-        transform: rotate(6deg);
-
-        z-index: 3;
-    }
-
-
-    /* =========================
-       FOTO 4
-       ABAJO DERECHA
-    ========================= */
-
-    .foto4 {
-        width: 125px;
-        height: 170px;
-
-        left: auto;
-        right: 7%;
-        top: 205px;
-
-        transform: rotate(-7deg);
-
-        z-index: 2;
-    }
-
-
-    /* =========================
-       TEXTO
-    ========================= */
-
-    .texto-historia {
-
-        width: 90%;
-        max-width: 350px;
-
-        margin: 0 auto;
-
-        font-size: 15px;
-        line-height: 1.65;
-
-        opacity: .85;
-
-        position: relative;
-        z-index: 20;
-
-        flex-shrink: 0;
-    }
-
-
-    /* =========================
-       BOTÓN
-    ========================= */
-
-    #historia button {
-
-        margin-top: 15px;
-        margin-bottom: 20px;
-
-        padding: 12px 27px;
-
-        font-size: 14px;
-
-        flex-shrink: 0;
-    }
 }
 
 /* =========================
@@ -591,6 +398,136 @@ button:hover {
 .final-texto {
     font-style: italic;
 }
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+
+.galeria {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    margin: 0;
+}
+
+.foto {
+    position: absolute;
+    box-sizing: border-box;
+    padding: 7px;
+    background: #fff;
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.45),
+        0 3px 8px rgba(0,0,0,.20);
+
+    overflow: hidden;
+}
+.foto img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+    /* =========================
+       FOTO PROTAGONISTA
+    ========================= */
+
+/* =========================
+   FOTO ARRIBA IZQUIERDA
+========================= */
+
+.foto1 {
+    width: 145px;
+    height: 195px;
+
+    left: 10%;
+    top: 25px;
+
+    transform: rotate(-8deg);
+
+    z-index: 4;
+
+    animation-delay: .5s;
+}
+
+
+/* =========================
+   FOTO ARRIBA DERECHA
+========================= */
+.foto2 {
+    position: absolute !important;
+    width: 145px !important;
+    height: 195px !important;
+
+    left: auto !important;
+    right: 24px !important;
+    top: 35px !important;
+
+    transform: rotate(7deg) !important;
+
+    z-index: 999 !important;
+}
+
+/* =========================
+   FOTO ABAJO IZQUIERDA
+========================= */
+.foto3 {
+    width: 145px;
+    height: 195px;
+
+    left: 10%;
+    top: 230px;
+
+    transform: rotate(6deg);
+
+    z-index: 2;
+
+    animation-delay: 1.5s;
+}
+
+
+/* =========================
+   FOTO ABAJO DERECHA
+========================= */
+.foto4 {
+    width: 145px;
+    height: 195px;
+
+    right: 7%;
+    top: 220px;
+
+    transform: rotate(-7deg);
+
+    z-index: 3;
+
+    animation-delay: 2s;
+}
+    /* =========================
+       TEXTO
+    ========================= */
+
+    .texto-historia {
+        width: 88%;
+        max-width: 350px;
+
+        margin-top: 0;
+
+        font-size: 14px;
+        line-height: 1.7;
+
+        opacity: .8;
+    }
+
+
+    #historia button {
+        margin-top: 18px;
+
+        padding: 12px 28px;
+
+        font-size: 14px;
+    }
 
 
     /* =========================
