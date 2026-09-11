@@ -436,26 +436,17 @@ button:hover {
 
 /* =========================
    FOTO ARRIBA IZQUIERDA
-========================= */
-
-.foto1 {
+==.foto1 {
     width: 145px;
     height: 195px;
 
     left: 10%;
-    top: 10px;
+    top: -20px; /* más arriba */
 
     transform: rotate(-8deg);
-
     z-index: 4;
-
-    animation-delay: .5s;
 }
 
-
-/* =========================
-   FOTO ARRIBA DERECHA
-========================= */
 .foto2 {
     position: absolute !important;
     width: 145px !important;
@@ -463,62 +454,50 @@ button:hover {
 
     left: auto !important;
     right: 24px !important;
-      top: 20px !important;
+    top: -10px !important; /* más arriba */
 
     transform: rotate(7deg) !important;
-
     z-index: 999 !important;
 }
 
-/* =========================
-   FOTO ABAJO IZQUIERDA
-========================= */
 .foto3 {
     width: 145px;
     height: 195px;
 
     left: 10%;
-    top: 210px;
+    top: 175px; /* más arriba */
 
     transform: rotate(6deg);
-
     z-index: 2;
 
     animation-delay: 1.5s;
 }
 
-
-/* =========================
-   FOTO ABAJO DERECHA
-========================= */
 .foto4 {
     width: 145px;
     height: 195px;
 
     right: 7%;
-    top: 200px;
-    transform: rotate(-7deg);
+    top: 165px; /* más arriba */
 
+    transform: rotate(-7deg);
     z-index: 3;
 
     animation-delay: 2s;
 }
-    /* =========================
-       TEXTO
-    ========================= */
 
-    .texto-historia {
-        width: 88%;
-        max-width: 350px;
+/* TEXTO */
+.texto-historia {
+    width: 88%;
+    max-width: 350px;
 
-        margin-top: 35px;
+    margin-top: 90px; /* BAJA EL TEXTO */
 
-        font-size: 14px;
-        line-height: 1.7;
+    font-size: 14px;
+    line-height: 1.7;
 
-        opacity: .8;
-    }
-
+    opacity: .8;
+}
     #historia button {
         margin-top: 18px;
 
