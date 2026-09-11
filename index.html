@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- MÚSICA -->
+    <audio id="musica" loop>
+        <source src="music2.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- PORTADA -->
+    <section id="inicio" class="pantalla activa">
+        <div class="contenido-inicio">
+            <p class="pequeno">PARA LA PERSONA QUE AMO</p>
+            <h1>Para ti,<br><span>mi amor ❤️</span></h1>
+            <p class="subtitulo">Tengo algo que quiero decirte...</p>
+            <button onclick="comenzar()">Abrir ❤️</button>
+        </div>
+    </section>
+
+    <!-- HISTORIA -->
+    <section id="historia" class="pantalla">
+        <div class="titulo">
+            <p>UNA PEQUEÑA HISTORIA</p>
+            <h2>Nosotros</h2>
+        </div>
+
+        <div class="galeria">
+            <div class="foto foto1"><img src="fotos/1223.png" alt="Foto 1"></div>
+            <div class="foto foto2"><img src="fotos/4.jpg" alt="Foto 2"></div>
+            <div class="foto foto3"><img src="fotos/2.jfif" alt="Foto 3"></div>
+            <div class="foto foto4"><img src="fotos/123.jfif" alt="Foto 4"></div>
+        </div>
+
+        <p class="texto-historia">
+            Entre tantas personas, tantos lugares y tantos días...<br>
+            terminé encontrándote a ti.
+        </p>
+
+        <button onclick="mostrarCarta()">Hay algo más... 💌</button>
+    </section>
+
+    <!-- CARTA CON SOBRE -->
+<section id="carta" class="pantalla">
+        <!-- SOBRE -->
+        <div class="sobre" onclick="abrirCarta(event)">
+            <div class="tapa"></div>
+            <div class="papel">
+                 <h2>Para ti ❤️</h2>
+            <p>Sé que hemos pasado por momentos difíciles y sé que algunas cosas que hice o dije
+te pudieron lastimar.
+Quiero reconocer mis errores y decirte
+que realmente me importas.
+
+<p>A pesar de todo lo que hemos vivido,
+hay algo que sigo teniendo claro:
+te amo.</p>
+
+            </p>Gracias por todos nuestros momentos,
+por las risas, por las conversaciones,
+por cada recuerdo que construimos juntos.</p>
+            <p>Gracias por cada momento, cada sonrisa, cada abrazo y cada recuerdo que hemos creado.</p>
+
+            <p>No todo ha sido perfecto, pero cada momento contigo ha significado muchísimo para mí.</p>
+
+            <p>Quiero que sepas que valoro muchísimo todo lo que hemos vivido juntos.</p>
+
+            <p>Y aunque hemos pasado por momentos difíciles, sigo guardando con mucho cariño a cada recuerdo que tenemos.</p>
+
+            <p>Gracias por estar en mi vida.</p>
+
+            <h3>Feliz aniversario, mi amor ❤️</h3>
+            </div>
+        </div>
+
+        
+<button class="boton-historia" onclick="continuarCarta()">
+    ¿Quieres continuar esta historia conmigo? ❤️
+</button>
+
+</section> <!-- CIERRA CARTA -->
+
+<!-- FINAL -->
+<section id="final" class="pantalla">
+
+    <!-- CONFETI -->
+    <div class="confeti"></div>
+
+    <div class="final-contenido">
+
+        <img src="fotos/5.jpg" class="foto-final" alt="Foto final">
+
+        <!-- CONTADOR -->
+        <div class="contador-final">
+            <span class="numero">183</span>
+            <span class="dias">DÍAS JUNTOS</span>
+        </div>
+
+        <div class="corazon-final">❤️</div>
+
+        <p>Y si pudiera volver al principio...</p>
+
+        <h1>
+            Te volvería<br>
+            a elegir. ❤️
+        </h1>
+
+        <p class="final-texto">Feliz aniversario, mi amor.</p>
+
+    </div>
+</section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,689 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #080808;
+    color: white;
+    overflow: hidden;
+}
+
+.pantalla {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.05);
+    transition: opacity 1s ease, transform 1s ease, visibility 1s;
+    padding: 20px;
+}
+
+.pantalla.activa {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+/* =========================
+   AMBIENTE GENERAL
+========================= */
+
+.pantalla {
+    isolation: isolate;
+}
+
+/* Luz ambiental */
+
+.pantalla::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(255, 180, 150, .07),
+            transparent 55%
+        );
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Textura sutil */
+
+.pantalla::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,.012) 0px,
+            rgba(255,255,255,.012) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+
+    opacity: .5;
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* =========================
+   INICIO
+========================= */
+#inicio {
+    background: url("fotos/fonodoo.jpg") center/cover no-repeat;
+     color: black;
+}
+
+.contenido-inicio {
+    max-width: 500px;
+    padding: 30px;
+}
+
+.pequeno {
+    letter-spacing: 5px;
+    font-size: 11px;
+    opacity: .7;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(45px, 10vw, 80px);
+    font-weight: normal;
+    line-height: 1.1;
+}
+
+h1 span {
+    font-style: italic;
+}
+
+.subtitulo {
+    margin-top: 30px;
+    opacity: .75;
+    font-size: 18px;
+}
+
+button {
+    margin-top: 35px;
+    padding: 14px 35px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    background: rgba(248, 250, 252, 0.658);
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: rgb(3, 1, 1);
+    color: black;
+    transform: scale(1.05);
+}
+
+/* =========================
+   HISTORIA
+========================= */
+#historia {
+    background: url("fotos/fondo6.jpg") center/cover no-repeat;
+}
+
+.titulo p {
+    font-size: 10px;
+    letter-spacing: 4px;
+    opacity: .5;
+}
+
+.titulo h2 {
+    font-size: 45px;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+.galeria {
+    width: 100%;
+    max-width: 850px;
+    height: 420px;
+    position: relative;
+    margin: 20px 0;
+}
+
+.foto {
+    position: absolute;
+    width: 210px;
+    height: 280px;
+    padding: 8px;
+    background: white;
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+    opacity: 0;
+    animation: aparecer 1.5s forwards;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.foto1 {
+    left: 5%;
+    top: 40px;
+    transform: rotate(-8deg);
+    animation-delay: .5s;
+}
+
+.foto2 {
+    left: 28%;
+    top: 90px;
+    transform: rotate(5deg);
+    animation-delay: 1s;
+}
+
+.foto3 {
+    right: 28%;
+    top: 30px;
+    transform: rotate(-4deg);
+    animation-delay: 1.5s;
+}
+
+.foto4 {
+    right: 5%;
+    top: 80px;
+    transform: rotate(8deg);
+    animation-delay: 2s;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(80px) scale(.8) rotate(0);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.texto-historia {
+    
+    max-width: 500px;
+    line-height: 1.7;
+    opacity: .75;
+    font-size: 16px;
+}
+
+/* =========================
+   CARTA CON SOBRE
+========================= */
+#carta {
+   background: url("fotos/fondo2.jpg") center/cover no-repeat;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* CONTENEDOR DEL SOBRE */
+.sobre {
+    width: min(330px, 85vw);
+    height: 190px;  /* ← más bajo */
+    position: relative;
+    cursor: pointer;
+    margin-top: 40px;  /* ← menos margen */
+}
+
+/* CUERPO DEL SOBRE (parte de abajo) */
+.sobre::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #c99a72;
+    border-radius: 6px;
+    box-shadow: 0 25px 70px rgba(0,0,0,.6);
+    z-index: 3;
+    transition: transform 0.8s ease;
+}
+
+/* TAPA DEL SOBRE (triángulo de arriba) */
+.sobre::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    left: 0;
+    top: 0;
+    background: #d4a87a;
+    clip-path: polygon(0 100%, 50% 0%, 100% 100%);
+    z-index: 5;
+    transition: transform 0.8s ease;
+    transform-origin: top;
+}
+
+/* CARTA (papel dentro del sobre) */
+/* CARTA (papel dentro del sobre) */
+.papel {
+    position: fixed;
+
+    width: min(88vw, 480px);
+    max-height: 78vh;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -45%)
+        scale(.9);
+
+    background: #fffdf8;
+    color: #29201c;
+
+    padding: 30px 25px;
+
+    border-radius: 6px;
+
+    opacity: 0;
+
+    transition:
+        transform 1.2s cubic-bezier(.2,.8,.2,1),
+        opacity .8s ease;
+
+    z-index: 20;
+
+    line-height: 1.6;
+
+    box-shadow: 0 15px 50px rgba(0,0,0,.4);
+
+    overflow-y: auto;
+
+    text-align: left;
+
+    pointer-events: none;
+
+    font-size: 14px;
+}
+
+.papel h2 {
+    text-align: center;
+    margin-bottom: 12px;
+    color: #b34141;
+    font-size: 20px;  /* ← más pequeño */
+}
+
+.papel h3 {
+    text-align: center;
+    margin-top: 15px;
+    color: #b34141;
+    font-size: 1.1rem;
+}
+
+.papel p {
+    margin-bottom: 10px;  /* ← menos espacio */
+}
+
+/* SOBRE ABIERTO - la tapa se pliega */
+.sobre.abierto::after {
+    transform: rotateX(180deg);
+}
+
+/* SOBRE ABIERTO - la carta sale */
+.sobre.abierto .papel {
+    opacity: 1;
+
+    transform: 
+    translate(-50%, -40%) 
+    scale(.9);
+
+    z-index: 20;
+
+    pointer-events: auto;
+}
+
+/* TEXTO DE ABAJO */
+.toca {
+    margin-top: 100px;
+    opacity: .5;
+    font-size: 13px;
+    transition: opacity .5s;
+}
+
+/* Cuando el sobre está abierto, ocultamos el texto */
+.sobre.abierto ~ .toca {
+    opacity: 0;
+}
+
+/* =========================
+   FINAL
+========================= */
+#final {
+    background: url("fotos/fondo4.jpg") center/cover no-repeat;
+}
+
+.final-contenido {
+    color: black;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.foto-final {
+    width: 260px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 3px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.7);
+    margin-bottom: 35px;
+}
+
+.final-contenido p {
+    opacity: .65;
+    font-size: 16px;
+}
+
+.final-contenido h1 {
+    margin: 25px 0;
+    font-size: clamp(40px, 9vw, 70px);
+}
+
+.final-texto {
+    font-style: italic;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+
+.galeria {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    margin: 0;
+}
+
+.foto {
+    position: absolute;
+    box-sizing: border-box;
+    padding: 7px;
+    background: #fff;
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.45),
+        0 3px 8px rgba(0,0,0,.20);
+
+    overflow: hidden;
+}
+.foto img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+    /* =========================
+       FOTO PROTAGONISTA
+    ========================= */
+
+/* =========================
+   FOTO ARRIBA IZQUIERDA
+========================= */
+
+.foto1 {
+    width: 145px;
+    height: 195px;
+
+    left: 10%;
+    top: 25px;
+
+    transform: rotate(-8deg);
+
+    z-index: 4;
+
+    animation-delay: .5s;
+}
+
+
+/* =========================
+   FOTO ARRIBA DERECHA
+========================= */
+.foto2 {
+    position: absolute !important;
+    width: 145px !important;
+    height: 195px !important;
+
+    left: auto !important;
+    right: 24px !important;
+    top: 35px !important;
+
+    transform: rotate(7deg) !important;
+
+    z-index: 999 !important;
+}
+
+/* =========================
+   FOTO ABAJO IZQUIERDA
+========================= */
+.foto3 {
+    width: 145px;
+    height: 195px;
+
+    left: 10%;
+    top: 230px;
+
+    transform: rotate(6deg);
+
+    z-index: 2;
+
+    animation-delay: 1.5s;
+}
+
+
+/* =========================
+   FOTO ABAJO DERECHA
+========================= */
+.foto4 {
+    width: 145px;
+    height: 195px;
+
+    right: 7%;
+    top: 220px;
+
+    transform: rotate(-7deg);
+
+    z-index: 3;
+
+    animation-delay: 2s;
+}
+    /* =========================
+       TEXTO
+    ========================= */
+
+    .texto-historia {
+        width: 88%;
+        max-width: 350px;
+
+        margin-top: 0;
+
+        font-size: 14px;
+        line-height: 1.7;
+
+        opacity: .8;
+    }
+
+
+    #historia button {
+        margin-top: 18px;
+
+        padding: 12px 28px;
+
+        font-size: 14px;
+    }
+
+
+    /* =========================
+       SOBRE
+    ========================= */
+
+    .sobre {
+        transform: scale(.85);
+        margin-top: 100px;
+    }
+
+
+    .toca {
+        margin-top: 60px;
+    }
+
+
+    .papel {
+        font-size: 14px;
+        padding: 25px 20px;
+    }
+}
+
+.boton-historia {
+    margin-top: 250px;
+    padding: 15px 28px;
+
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.08);
+    color: #fff;
+
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+    transition: .4s ease;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.3);
+}
+
+/* =========================
+   FINAL ROMÁNTICO
+========================= */
+
+.contador-final {
+    margin: 5px 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.numero {
+    font-size: 55px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.dias {
+    font-size: 11px;
+    letter-spacing: 5px;
+    opacity: .55;
+    margin-top: 5px;
+}
+
+.corazon-final {
+    font-size: 30px;
+    margin-bottom: 15px;
+    animation: latidoFinal 1.2s infinite;
+    filter: drop-shadow(0 0 15px rgba(255, 50, 80, .6));
+}
+
+@keyframes latidoFinal {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.3);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.18);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   CONFETI
+========================= */
+
+.confeti {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confeti::before,
+.confeti::after {
+    content: "❤️ ✦ ♥ ✧ ❤️ ✦ ♥ ✧ ❤️ ✦";
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    font-size: 18px;
+    letter-spacing: 35px;
+    opacity: .35;
+    animation: caerConfeti 7s linear infinite;
+}
+
+.confeti::after {
+    animation-delay: 3s;
+    opacity: .2;
+    font-size: 14px;
+    letter-spacing: 50px;
+}
+
+@keyframes caerConfeti {
+
+    from {
+        transform: translateY(-50px) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(110vh) rotate(15deg);
+    }
+}
+
+.foto-final {
+    width: 260px;
+    height: 350px;
+    object-fit: cover;
+
+    padding: 8px;
+    background: white;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.5),
+        0 5px 15px rgba(0,0,0,.25);
+
+    border-radius: 2px;
+
+    transform: rotate(-3deg);
+
+    margin-bottom: 35px;
+}
